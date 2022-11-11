@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArvPokemon", "ArvPokemon\ArvPokemon.csproj", "{B40DDC46-2DA7-4323-AD18-9D74CA0622CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B40DDC46-2DA7-4323-AD18-9D74CA0622CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40DDC46-2DA7-4323-AD18-9D74CA0622CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40DDC46-2DA7-4323-AD18-9D74CA0622CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40DDC46-2DA7-4323-AD18-9D74CA0622CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A35FAFE-060B-4E09-A1D4-F930EE9FFA6D}
+	EndGlobalSection
+EndGlobal
