@@ -17,15 +17,7 @@ namespace ArvPokemon
                 new Attack("Rock Tomb", 60, 0, "Rock"),
                 new Attack("Stomping Tantrum", 75, 0,"Ground"),
             };
-            WeakTo = new string[] { "Water", "Grass", "Fighting", "Steel", "Ground" };
-            //Weakness = new WeakTo[]
-            //{
-            //    new WeakTo("Flying"),
-            //    new WeakTo("Water"),
-            //    new WeakTo("Steel"),
-            //    new WeakTo("Ground"),
-            //    new WeakTo("Grass"),
-            //};
+            WeakToo = new string[] { "Water", "Grass", "Fighting", "Steel", "Ground" };
         }
 
     }

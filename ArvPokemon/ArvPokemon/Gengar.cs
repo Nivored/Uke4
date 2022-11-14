@@ -17,14 +17,7 @@ namespace ArvPokemon
                 new Attack ("Sludge Bomb", 90, 0, "Poison"),
                 new Attack ("Poison Jab", 80, 0, "Poison"),
             };
-            WeakTo = new string[] { "Ghost", "Dark", "Ground", "Psychic" };
-            //Weakness = new WeakTo[]
-            //{
-            //    new WeakTo("Ghost"),
-            //    new WeakTo("Psychic"),
-            //    new WeakTo("Dark"),
-            //    new WeakTo("Ground"),
-            //};
+            WeakToo = new string[] { "Ghost", "Dark", "Ground", "Psychic" };
         }
     }
 }

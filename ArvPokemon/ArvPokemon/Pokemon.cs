@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,7 @@ namespace ArvPokemon
         public int Health { get; set; }
         public int Speed { get; set; }
         public  Attack[] Attacks { get; set; }
-        //public WeakTo[] Weakness { get; set; }
-        public string[] WeakTo { get; set; }
+        public string[] WeakToo { get; set; }
         public int Defence { get; set; }
         public bool HasFainted;
 
@@ -29,8 +29,7 @@ namespace ArvPokemon
             Health = health;
             Speed = speed;
             Attacks = new Attack[]{};
-            //Weakness = new WeakTo[] {};
-            string[] WeakTo = new string[]{};
+            string[] WeakToo = new string[]{};
             Defence = defence;
             HasFainted = true;
         }
@@ -41,42 +40,57 @@ namespace ArvPokemon
             var randomIndex = random.Next(Attacks.Length);
             var randomAttack = Attacks[randomIndex];
 
-            var attack = randomAttack.Type.Select(v => v.Equals(WeakTo));
-                if (attack == null)
+            if (opponent.WeakToo.Contains(randomAttack.Type))
+            {
+                if (randomAttack.LifeSteal >= 1)
                 {
-                    if (randomAttack.LifeSteal >= 1)
-                    {
-                        Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg *2}");
-                        opponent.LoosHealth(randomAttack.Dmg * 2);
-                        Health += randomAttack.LifeSteal * 2;
-                        Console.WriteLine($"{Name} was healed for {randomAttack.LifeSteal}");
-                        CheckPokemonStatus(opponent);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg *2}");
-                        opponent.LoosHealth(randomAttack.Dmg * 2);
-                        CheckPokemonStatus(opponent);
-                    }
+                    Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg*2}");
+                    opponent.LoosHealth(randomAttack.Dmg * 2);
+                    Health += randomAttack.LifeSteal * 2;
+                    Console.WriteLine($"{Name} was healed for {randomAttack.LifeSteal*2}");
+                    CheckPokemonStatus(opponent);
                 }
-                else if (attack != null)
+                else
                 {
-                    if (randomAttack.LifeSteal >= 1)
-                    {
-                        Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg}");
-                        opponent.LoosHealth(randomAttack.Dmg);
-                        Health += randomAttack.LifeSteal;
-                        Console.WriteLine($"{Name} was healed for {randomAttack.LifeSteal}");
-                        CheckPokemonStatus(opponent);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg}");
-                        opponent.LoosHealth(randomAttack.Dmg);
-                        CheckPokemonStatus(opponent);
-                    }
+                    Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg*2}");
+                    opponent.LoosHealth(randomAttack.Dmg * 2);
+                    CheckPokemonStatus(opponent);
                 }
-         
+            }
+            else if (opponent.Type1.Contains(randomAttack.Type) || opponent.Type2.Contains(randomAttack.Type))
+            {
+                if (randomAttack.LifeSteal >= 1)
+                {
+                    Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg/2}");
+                    opponent.LoosHealth(randomAttack.Dmg/2);
+                    Health += randomAttack.LifeSteal/2;
+                    Console.WriteLine($"{Name} was healed for {randomAttack.LifeSteal/2}");
+                    CheckPokemonStatus(opponent);
+                }
+                else
+                {
+                    Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg/2}");
+                    opponent.LoosHealth(randomAttack.Dmg/2);
+                    CheckPokemonStatus(opponent);
+                }
+            }
+            else
+            {
+                if (randomAttack.LifeSteal >= 1)
+                {
+                    Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg}");
+                    opponent.LoosHealth(randomAttack.Dmg);
+                    Health += randomAttack.LifeSteal;
+                    Console.WriteLine($"{Name} was healed for {randomAttack.LifeSteal}");
+                    CheckPokemonStatus(opponent);
+                }
+                else
+                {
+                    Console.WriteLine($"{Name} used {randomAttack.Name} and hit for {randomAttack.Dmg}");
+                    opponent.LoosHealth(randomAttack.Dmg);
+                    CheckPokemonStatus(opponent);
+                }
+            }
         }
 
         public void CheckPokemonStatus(Pokemon opponent)

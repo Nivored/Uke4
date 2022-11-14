@@ -17,15 +17,7 @@ namespace ArvPokemon
                 new Attack("Dazzling Gleam", 80, 0, "Fairy"),
                 new Attack("Psybeam", 65, 0, "Psychic"),
             };
-            WeakTo = new string[] { "Bug", "Ghost", "Dark", "Poison", "Steel" };
-            //Weakness = new WeakTo[]
-            //{
-            //    new WeakTo("Bug"),
-            //    new WeakTo("Ghost"),
-            //    new WeakTo("Dark"),
-            //    new WeakTo("Poison"),
-            //    new WeakTo("Steel"),
-            //};
+            WeakToo = new string[] { "Bug", "Ghost", "Dark", "Poison", "Steel" };
         }
 
     }

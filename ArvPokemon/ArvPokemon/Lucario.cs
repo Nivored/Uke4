@@ -17,16 +17,7 @@ namespace ArvPokemon
                 new Attack("Metal Claw", 50, 0, "Steel"),
                 new Attack("Meteor Mash", 90, 0, "Steel"),
             };
-            WeakTo = new string[] { "Flying", "Psychic", "Fairy", "Fire", "Ground", "Rock" };
-            //Weakness = new WeakTo[]
-            //{
-            //    new WeakTo("Flying"),
-            //    new WeakTo("Psychic"),
-            //    new WeakTo("Fairy"),
-            //    new WeakTo("Fire"),
-            //    new WeakTo("Ground"),
-            //    new WeakTo("Rock"),
-            //};
+            WeakToo = new string[] { "Flying", "Psychic", "Fairy", "Fire", "Ground", "Rock" };
         }
     }
 }
